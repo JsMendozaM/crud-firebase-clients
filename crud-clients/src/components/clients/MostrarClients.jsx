@@ -7,16 +7,20 @@ import {dataBase} from '../../firebase/dataBase'
 
 const MostrarClients = () => {
 
-    const [clientes, setClientes] = useState([])
-    const tablaClientes = collection(dataBase, 'clientes')
+    const [clients, setClients] = useState([])
+    const tablaClients = collection(dataBase, 'clientes')
 
-    const listarClientes = async () => {
-          const datos = await getDocs(tablaClientes)
+    const listarClients = async () => {
+          const datos = await getDocs(tablaClients)
+
+    }
+
+    const eliminarClients = async (id) =>{
 
     }
 
     useEffect (()=>{
-        listarClientes()
+        listarClients()
     }, [])
 
       return (
@@ -29,7 +33,9 @@ const MostrarClients = () => {
                 <th>Nombre</th>
                 <th>Correo</th>
                 <th>Telefono</th>
-                <th>Acciones</th>
+                <td>
+                  <button></button>
+                </td>
               </tr>
             </thead>
           </table>
